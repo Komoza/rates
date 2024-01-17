@@ -8,10 +8,30 @@
 
     padding: 48px 0;
 
+    @media (max-width: 1150px) {
+        padding: 32px 0;
+    }
+
+    @media (max-width: 620px) {
+        padding: 24px 0;
+    }
+
     &__cards {
+        padding-top: 48px;
+
         width: 100%;
         display: flex;
         justify-content: space-between;
         gap: 24px;
+
+        @media (max-width: 890px) {
+            flex-wrap: wrap;
+            gap: 12px;
+            padding-top: 40px;
+        }
+
+        @media (max-width: 620px) {
+            padding-top: 32px;
+        }
     }
 }

@@ -1,6 +1,6 @@
 .card {
     flex: 1;
-    margin-top: 48px;
+    order: 3;
     position: relative;
 
     background: $color-white;
@@ -11,8 +11,44 @@
     flex-direction: column;
     align-items: center;
 
+    @media (max-width: 1150px) {
+        padding: 24px 11px;
+    }
+
+    @media (max-width: 890px) {
+        flex: auto;
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto 1fr;
+        gap: 20px 40px;
+        grid-template-areas:
+            'logo middle-wrap'
+            'title middle-wrap'
+            'description middle-wrap'
+            'services middle-wrap';
+
+        padding: 12px 12px 12px 24px;
+    }
+
+    @media (max-width: 620px) {
+        padding: 24px;
+        display: flex;
+        gap: 16px;
+    }
+
     &--gold {
         box-shadow: 0 0 0 4px #e0b330;
+        @media (max-width: 890px) {
+            order: 1;
+        }
+    }
+
+    &--blue {
+        @media (max-width: 890px) {
+            order: 2;
+        }
     }
 
     &__best-rate {
@@ -31,7 +67,19 @@
         font-size: 14px;
         font-style: normal;
         font-weight: 600;
-        line-height: 19.6px;
+        line-height: 140%;
+
+        @media (max-width: 890px) and (min-width: 621px) {
+            left: 24px;
+        }
+
+        @media (max-width: 620px) {
+            top: -28px;
+            left: calc(50% - 52px);
+            padding: 6px 10px;
+            font-size: 12px;
+            line-height: 120%;
+        }
     }
 
     &__timer {
@@ -45,37 +93,103 @@
         display: flex;
         align-items: center;
         gap: 4px;
+
+        @media (max-width: 890px) {
+            z-index: 20;
+            top: 28px;
+            left: calc(50% + 42px);
+        }
+
+        @media (max-width: 620px) {
+            top: 16px;
+            left: 16px;
+
+            padding: 5px 8px 5px 5px;
+        }
     }
 
     &__img {
+        grid-area: logo;
+
         width: 80px;
         height: 80px;
+
+        @media (max-width: 1150px) {
+            width: 72px;
+            height: 72px;
+        }
+        @media (max-width: 890px) {
+            margin-top: 12px;
+
+            width: 64px;
+            height: 64px;
+        }
+        @media (max-width: 620px) {
+            margin-top: 0;
+        }
     }
 
     &__title {
+        grid-area: title;
         margin-top: 20px;
 
         color: $color-black;
         font-family: 'SF UI Display Semibold';
         font-size: 32px;
         font-weight: 600;
-        line-height: 38px;
+        line-height: 120%;
         letter-spacing: 0em;
         text-align: center;
+
+        @media (max-width: 1150px) {
+            margin-top: 16px;
+            font-size: 24px;
+        }
+        @media (max-width: 890px) {
+            margin-top: 0;
+
+            font-size: 24px;
+            text-align: left;
+        }
+        @media (max-width: 620px) {
+            font-size: 20px;
+        }
     }
 
     &__description {
+        grid-area: description;
         margin-top: 8px;
 
         color: $color-grey-dark;
         font-family: 'SF UI Display Light';
         font-size: 16px;
         font-weight: 400;
-        line-height: 22px;
+        line-height: 140%;
         letter-spacing: 0em;
         text-align: center;
+
+        @media (max-width: 1150px) {
+            font-size: 14px;
+        }
+        @media (max-width: 890px) {
+            margin-top: -12px;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: left;
+        }
     }
 
+    &__middle-wrap {
+        grid-area: middle-wrap;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        @media (max-width: 620px) {
+            gap: 4px;
+        }
+    }
     &__price {
         position: relative;
         overflow: hidden;
@@ -88,6 +202,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @media (max-width: 1150px) {
+            padding: 24px 16px 16px;
+        }
+
+        @media (max-width: 890px) {
+            padding: 16px;
+            margin-top: 0;
+            height: 293px;
+        }
+        @media (max-width: 620px) {
+            height: auto;
+        }
     }
 
     &__info {
@@ -96,21 +223,36 @@
         border-radius: 16px;
         width: 100%;
         height: 72px;
+
+        @media (max-width: 620px) {
+            height: 52px;
+        }
     }
 
     &__info-wrap {
         width: 100%;
-        margin-top: 8px;
         position: relative;
     }
 
     &__services {
-        width: 360px;
+        grid-area: services;
+
+        width: 100%;
+        max-width: 360px;
         margin-top: 24px;
 
         display: flex;
         flex-direction: column;
         gap: 12px;
+
+        @media (max-width: 1150px) {
+            gap: 8px;
+        }
+
+        @media (max-width: 890px) {
+            margin-top: 0;
+            align-self: start;
+        }
     }
 }
 
@@ -118,6 +260,11 @@
     &__clock {
         width: 16px;
         height: 16px;
+
+        @media (max-width: 620px) {
+            width: 11px;
+            height: 11px;
+        }
     }
 
     &__time {
@@ -129,6 +276,13 @@
         font-style: normal;
         font-weight: 600;
         line-height: 19.6px;
+
+        @media (max-width: 620px) {
+            font-family: 'SF UI Display Bold';
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 120%;
+        }
     }
 }
 
@@ -156,12 +310,28 @@
         font-family: 'SF UI Display Bold';
         font-size: 40px;
         font-weight: 700;
-        line-height: 48px;
+        line-height: 120%;
         letter-spacing: 0em;
         text-align: center;
 
         &--white {
             color: $color-white;
+        }
+
+        @media (max-width: 1150px) {
+            font-family: 'SF UI Display Semibold';
+            font-size: 32px;
+            font-weight: 600;
+        }
+        @media (max-width: 890px) {
+            margin-top: 70px;
+        }
+        @media (max-width: 620px) {
+            margin-top: 4px;
+
+            font-family: 'SF UI Display Bold';
+            font-size: 24px;
+            font-weight: 700;
         }
     }
 
@@ -173,18 +343,32 @@
         font-family: 'SF UI Display Light';
         font-size: 16px;
         font-weight: 400;
-        line-height: 16px;
+        line-height: 100%;
         letter-spacing: 0em;
         text-align: left;
 
         &--white {
             color: $color-white;
         }
+
+        @media (max-width: 1150px) {
+            margin-top: 4px;
+
+            font-size: 14px;
+            line-height: 140%;
+        }
     }
 
     &__submit {
         z-index: 20;
         margin-top: 24px;
+
+        @media (max-width: 890px) {
+            margin-top: 69px;
+        }
+        @media (max-width: 620px) {
+            margin-top: 16px;
+        }
     }
 }
 
@@ -212,16 +396,38 @@
         z-index: 30;
         position: absolute;
         top: 0;
-        left: 0;
+        left: calc(100% - 385px);
+
+        @media (max-width: 1150px) {
+            left: calc(100% - 355px);
+        }
+        @media (max-width: 620px) {
+            left: 1px;
+        }
+        @media (max-width: 370px) {
+            left: -30px;
+        }
     }
 
     &__credit-card {
         z-index: 40;
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 208px;
-        height: 72px;
+        top: calc(100% - 140px);
+        right: 190px;
+
+        @media (max-width: 1150px) {
+            width: 192px;
+            right: 153px;
+            top: calc(100% - 109px);
+        }
+
+        @media (max-width: 620px) {
+            left: -31px;
+            top: -50px;
+        }
+        @media (max-width: 370px) {
+            left: auto;
+        }
     }
 
     &__title {
@@ -238,6 +444,20 @@
         font-weight: 700;
         line-height: 26.4px;
         text-transform: uppercase;
+
+        @media (max-width: 1150px) {
+            width: 112px;
+            font-size: 20px;
+            top: 14px;
+            right: 66px;
+        }
+
+        @media (max-width: 620px) {
+            top: 9px;
+            right: 43px;
+            font-size: 17.209px;
+            line-height: 110%;
+        }
     }
 
     &__hint {
@@ -254,6 +474,11 @@
         border-radius: 50%;
 
         cursor: pointer;
+
+        @media (max-width: 620px) {
+            top: 15px;
+            right: 7px;
+        }
     }
 
     &__modal {
@@ -265,10 +490,14 @@
         right: 2px;
 
         width: 302px;
-        height: 76px;
         padding: 8px 12px;
         background-color: $color-black;
         border-radius: 10px;
+
+        @media (max-width: 1150px) {
+            width: 270px;
+            bottom: -90px;
+        }
     }
 
     &__modal-figure {
@@ -299,6 +528,11 @@
     &__img {
         width: 20px;
         height: 20px;
+
+        @media (max-width: 620px) {
+            width: 14px;
+            height: 14px;
+        }
     }
 }
 
@@ -311,6 +545,11 @@
     &__item-img {
         width: 20px;
         height: 20px;
+
+        @media (max-width: 620px) {
+            width: 16px;
+            height: 16px;
+        }
     }
 
     &__item-text {
@@ -318,9 +557,13 @@
         font-family: 'SF UI Display Light';
         font-size: 16px;
         font-weight: 400;
-        line-height: 22px;
+        line-height: 140%;
         letter-spacing: 0em;
         text-align: left;
+
+        @media (max-width: 1150px) {
+            font-size: 14px;
+        }
     }
 
     &__item-banks {
