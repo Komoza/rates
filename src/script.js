@@ -12,7 +12,7 @@ buttonSubmit.forEach((item) => {
 });
 
 // Запуск таймера
-const deadline = '2024-01-18T14:00:00'; // дата тикает относительно дедлайна
+const deadline = '2024-02-01T14:00:00'; // дата тикает относительно дедлайна
 
 const startTimer = (deadline) => {
     const targetDate = new Date(deadline).getTime();
