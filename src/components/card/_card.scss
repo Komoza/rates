@@ -1,0 +1,330 @@
+.card {
+    flex: 1;
+    margin-top: 48px;
+    position: relative;
+
+    background: $color-white;
+    padding: 32px 12px;
+    border-radius: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--gold {
+        box-shadow: 0 0 0 4px #e0b330;
+    }
+
+    &__best-rate {
+        position: absolute;
+        top: -32px;
+        display: flex;
+
+        padding: 6px 12px;
+        gap: 10px;
+        border-radius: 16px 16px 0px 0px;
+        background: linear-gradient(180deg, #fff289 0%, #d2a41d 100%), #fff;
+
+        color: $color-white;
+        text-align: center;
+        font-family: 'SF UI Display Semibold';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 19.6px;
+    }
+
+    &__timer {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+
+        padding: 6px 12px 6px 8px;
+        border-radius: 1000px;
+        background-color: #f0574d33;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    &__img {
+        width: 80px;
+        height: 80px;
+    }
+
+    &__title {
+        margin-top: 20px;
+
+        color: $color-black;
+        font-family: 'SF UI Display Semibold';
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 38px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+    &__description {
+        margin-top: 8px;
+
+        color: $color-grey-dark;
+        font-family: 'SF UI Display Light';
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+    &__price {
+        position: relative;
+        overflow: hidden;
+        margin-top: 24px;
+        width: 100%;
+        background-color: $color-blue;
+        padding: 32px 24px 24px;
+        border-radius: 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__info {
+        overflow: hidden;
+        position: relative;
+        border-radius: 16px;
+        width: 100%;
+        height: 72px;
+    }
+
+    &__info-wrap {
+        width: 100%;
+        margin-top: 8px;
+        position: relative;
+    }
+
+    &__services {
+        width: 360px;
+        margin-top: 24px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+.timer {
+    &__clock {
+        width: 16px;
+        height: 16px;
+    }
+
+    &__time {
+        color: #f24c41;
+        text-align: center;
+
+        font-family: 'SF UI Display Semibold';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 19.6px;
+    }
+}
+
+.price {
+    &--gold {
+        background: linear-gradient(
+            180deg,
+            #e0b330 0%,
+            #fbee88 51.1%,
+            #e0b330 100%
+        );
+    }
+
+    &__background-gold {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+    }
+
+    &__title {
+        z-index: 20;
+
+        color: $color-black;
+        font-family: 'SF UI Display Bold';
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 48px;
+        letter-spacing: 0em;
+        text-align: center;
+
+        &--white {
+            color: $color-white;
+        }
+    }
+
+    &__description {
+        margin-top: 8px;
+        z-index: 20;
+
+        color: $color-grey-dark;
+        font-family: 'SF UI Display Light';
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        &--white {
+            color: $color-white;
+        }
+    }
+
+    &__submit {
+        z-index: 20;
+        margin-top: 24px;
+    }
+}
+
+.info {
+    &--gold {
+        background: linear-gradient(
+            180deg,
+            #e0b330 0%,
+            #fbee88 51.1%,
+            #e0b330 100%
+        );
+    }
+
+    &--blue {
+        background: #2557f6;
+    }
+    &__background-gold {
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__background-ellipse {
+        z-index: 30;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__credit-card {
+        z-index: 40;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 208px;
+        height: 72px;
+    }
+
+    &__title {
+        width: 179px;
+        z-index: 20;
+        position: absolute;
+        top: 13px;
+        right: 33px;
+
+        color: $color-white;
+        font-family: 'Mazzard Bold';
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 26.4px;
+        text-transform: uppercase;
+    }
+
+    &__hint {
+        z-index: 30;
+        width: 20px;
+        height: 20px;
+
+        position: absolute;
+        top: 26px;
+        right: 16px;
+
+        background: none;
+        border: 0;
+        border-radius: 50%;
+
+        cursor: pointer;
+    }
+
+    &__modal {
+        display: none;
+
+        position: absolute;
+        z-index: 50;
+        bottom: -63px;
+        right: 2px;
+
+        width: 302px;
+        height: 76px;
+        padding: 8px 12px;
+        background-color: $color-black;
+        border-radius: 10px;
+    }
+
+    &__modal-figure {
+        z-index: 10;
+        position: absolute;
+        top: -5px;
+        right: 15px;
+
+        background-color: $color-black;
+        width: 18px;
+        height: 18px;
+
+        border-radius: 2px;
+        transform: rotate(45deg);
+    }
+
+    &__modal-text {
+        color: $color-white;
+        font-family: 'SF UI Display Medium';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 19.6px;
+    }
+}
+
+.hint {
+    &__img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.services {
+    &__item {
+        display: flex;
+        gap: 6px;
+    }
+
+    &__item-img {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__item-text {
+        color: $color-black;
+        font-family: 'SF UI Display Light';
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+
+    &__item-banks {
+        width: 50px;
+        height: 22px;
+    }
+}

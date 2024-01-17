@@ -1,0 +1,54 @@
+// colors
+$color-blue: #f3f7fb;
+$color-grey-light: #c3c8cf;
+$color-grey-dark: #8f959b;
+$color-black: #0e0f11;
+$color-white: #fff;
+
+.container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    padding: 0 32px;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: $color-blue;
+}
+
+.black-button {
+    width: 100%;
+    height: 64px;
+    border: 0;
+    border-radius: 16px;
+    background-color: $color-black;
+
+    color: $color-white;
+    font-family: 'SF UI Display Semibold';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &--not-active {
+        cursor: not-allowed;
+        opacity: 0.6;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+@import '../components/title/title';
+@import '../components/rates/rates';
+@import '../components/card/card';

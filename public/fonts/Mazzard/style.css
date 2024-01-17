@@ -1,0 +1,7 @@
+/* 700 */
+@font-face {
+    font-family: 'Mazzard Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mazzard Bold'), url('MazzardH-Bold.woff') format('woff');
+}
